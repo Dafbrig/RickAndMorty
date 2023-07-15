@@ -1,0 +1,88 @@
+.tarjeta {
+    width: 18vw;
+    height: 32vw;
+    background-color: black;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 0 0 5rem 0;
+    border-radius: 20px;
+    position: relative;
+    margin: 0.5rem;
+    margin-top: 1.5rem;
+    box-shadow: 3px 6px 15px 4px  rgb(20, 9, 2);
+    outline: 4px solid rgb(0, 84, 21);
+}
+
+.tarjeta:hover {
+    transform: scale(1.1);
+    transition-duration: 0.5s;
+}
+
+.boton {
+    width: 100%;
+    font-size: 1.5rem;
+    background-color: green;
+    color: black;
+    cursor: pointer;
+    transition-duration: 0.5s;
+    border-radius: 20px;
+    border: none;
+    margin-bottom: 5px;
+    margin-top: 5px;
+}
+
+.boton:hover {
+    transform: scale(1.2);
+    transition-duration: 0.5s;
+    border-radius: 100px;
+}
+
+.boton2 {
+    width: 100%;
+    font-size: 1.5rem;
+    background-color: black;
+    cursor: pointer;
+    transition-duration: 0.5s;
+    border-radius: 20px;
+    border: none;
+    margin-bottom: 5px;
+    margin-top: 5px;
+}
+
+.boton2:hover {
+    transform: scale(1.2);
+    transition-duration: 0.5s;
+    border-radius: 100px;
+}
+
+.botones {
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    gap: 90%
+}
+
+.image {
+    width: 100%;
+    border-radius: 4px;
+}
+
+.name {
+    font-size: 1.52rem;
+    width: 100%;
+    margin-top: -20px;
+    background-color: green;
+    margin-bottom: -5px;
+    color: black;
+    border-top-left-radius: 30%;
+    border-bottom-left-radius: 4px;
+    border-bottom-right-radius: 4px;
+}
+
+.text {
+    width: 100%;
+    color: green;
+    display: flex;
+    flex-direction: column;
+}
