@@ -1,25 +1,13 @@
-const express = require('express')
-const router = require('./routes/index')
-const morgan = require('morgan')
-const cors = require('cors')
+const { Router } = require('express');
+const getCharById = require('../controllers/getCharById');
+const login = require('../controllers/login');
+const { postFav, deleteFav } = require('../controllers/handleFavorites');
 
-const server = express()
-const PORT = 3001;
+const router = Router();
 
-server.use(morgan('dev'))
-server.use(cors())
+router.get('/character/:id', getCharById);
+router.get('/login', login);
+router.post('/fav', postFav);
+router.delete('/fav/:id', deleteFav);
 
-server.use(express.json())
-
-/*
-request --> morgan --> cors --> express.json() -> ruta ('/rickandmorty')
-  req        req        req
-*/
-
-server.use('/rickandmorty', router)
-
-server.listen(PORT,()=>{
-  console.log(`Server is listening on port: ${PORT}`);
-})
-
-
+module.exports = router;
