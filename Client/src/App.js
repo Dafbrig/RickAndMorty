@@ -11,8 +11,8 @@ import Form from "./components/Form/Form";
 import Favorites from "./components/Favorites/Favorites";
 
 function App() {
-  const EMAIL = "algoaca@gmail.com";
-  const PASSWORD = "A123456";
+  //const EMAIL = "algoaca@gmail.com";
+  //const PASSWORD = "A123456";
   const location = useLocation();
   const navigate = useNavigate();
   const [access, setAccess] = useState(false);
@@ -23,10 +23,13 @@ function App() {
   }, [access, navigate]);
 
   function login(userData) {
-    if (userData.email === EMAIL && userData.password === PASSWORD) {
-      setAccess(true);
-      navigate("/home");
-    }
+    const { email, password } = userData;
+    const URL = "http://localhost:3001/rickandmorty/login/";
+    axios(URL + `?email=${email}&password=${password}`).then(({ data }) => {
+      const { access } = data;
+      setAccess(access);
+      access && navigate("/home");
+    });
   }
 
   function logout() {
