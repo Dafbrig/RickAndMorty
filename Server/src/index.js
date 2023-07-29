@@ -1,13 +1,7 @@
-const { Router } = require('express');
-const getCharById = require('../controllers/getCharById');
-const login = require('../controllers/login');
-const { postFav, deleteFav } = require('../controllers/handleFavorites');
+const server = require('./app');
 
-const router = Router();
+const PORT = 3001;
 
-router.get('/character/:id', getCharById);
-router.get('/login', login);
-router.post('/fav', postFav);
-router.delete('/fav/:id', deleteFav);
-
-module.exports = router;
+server.listen(PORT, () => {
+  console.log(`Server is listening on port: ${PORT}`);
+});
