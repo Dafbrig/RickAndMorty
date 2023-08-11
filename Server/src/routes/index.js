@@ -1,14 +1,15 @@
-const { Router } = require('express')
-const getCharById = require('../controllers/getCharById')
-const login = require('../controllers/login')
-const { postFav, deleteFav } = require('../controllers/handleFavorites')
+const { Router } = require('express');
+const getCharById = require('../controllers/getCharById');
+const login = require('../controllers/login');
+const postFav = require('../controllers/postFav');
+const deleteFav = require('../controllers/deleteFav');
 
-const router = Router()
+const router = Router();
 
-router.get('/character/:id', getCharById)
-router.get('/login',login)
-router.post('/fav', postFav)
-router.delete('/fav/:id',deleteFav)
+router.get('/character/:id', getCharById);
+router.get('/login', login);
+router.post('/login', login); // Supongo que aquí se maneja el proceso de inicio de sesión
+router.post('/fav', postFav);
+router.delete('/fav/:id', deleteFav);
 
 module.exports = router;
-
